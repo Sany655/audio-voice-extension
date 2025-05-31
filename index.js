@@ -10,6 +10,9 @@ app.use(cors());
 app.use(express.json());
 
 // Basic health check endpoint
+app.get('/', (req, res) => {
+  res.status(200).json({ status: 'active' });
+});
 app.get('/health', (req, res) => {
   res.status(200).json({ status: 'healthy' });
 });
